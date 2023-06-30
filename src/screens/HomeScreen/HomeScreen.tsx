@@ -4,8 +4,6 @@ import style from './styles';
 import categories from '../../../assets/data/categories';
 import HomeCategory from '../../components/HomeScreen';
 
-//const firstCategory = categories.items[0];
-
 const HomeScreen = () => {
   return (
     <View style={style.container}>
