@@ -1,23 +1,18 @@
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, Pressable} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+import {Episode} from '../../../types';
 
 interface EpisodeItemProps {
-  episode: {
-    id: string;
-    title: string;
-    poster: string;
-    duration: string;
-    plot: string;
-    video: string;
-  };
+  episode: Episode;
+  onPress: (eppisode: Episode) => {};
 }
 
 const EpisodeItem = (props: EpisodeItemProps) => {
-  const {episode} = props;
+  const {episode, onPress} = props;
   return (
-    <View style={{margin: 10}}>
+    <Pressable style={{margin: 10}} onPress={() => onPress(episode)}>
       <View style={styles.row}>
         <Image style={styles.image} source={{uri: episode.poster}} />
         <View style={styles.titleContainer}>
@@ -27,7 +22,7 @@ const EpisodeItem = (props: EpisodeItemProps) => {
         <AntDesign name="download" size={16} color="white" />
       </View>
       <Text style={styles.plot}>{episode.plot}</Text>
-    </View>
+    </Pressable>
   );
 };
 

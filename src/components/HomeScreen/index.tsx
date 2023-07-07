@@ -1,6 +1,8 @@
-import {StyleSheet, Image, View, FlatList, Text} from 'react-native';
+import {StyleSheet, Image, View, FlatList, Text, Pressable} from 'react-native';
 import React from 'react';
 import style from './styles';
+import movie from '../../../assets/data/movie';
+import {useNavigation} from '@react-navigation/native';
 
 interface HomeCategoryProps {
   category: {
@@ -15,6 +17,12 @@ interface HomeCategoryProps {
 
 const HomeCategory = (props: HomeCategoryProps) => {
   const {category} = props;
+
+  const navigation = useNavigation();
+
+  const onMoviePress = movie => {
+    navigation.navigate('MovieDetailsScreen', {id: movie.id});
+  };
   return (
     <>
       <View style={{marginTop: 10}}>
@@ -23,12 +31,14 @@ const HomeCategory = (props: HomeCategoryProps) => {
           horizontal
           data={category.movies}
           renderItem={({item, index}) => (
-            <Image
-              source={{
-                uri: item.poster,
-              }}
-              style={style.image}
-            />
+            <Pressable onPress={() => onMoviePress(item)}>
+              <Image
+                source={{
+                  uri: item.poster,
+                }}
+                style={style.image}
+              />
+            </Pressable>
           )}
         />
       </View>
