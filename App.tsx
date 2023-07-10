@@ -9,6 +9,11 @@ import {
 import React, {useEffect} from 'react';
 import RootNavigator from './src/navigation/BottomTabNavigator';
 import useColorScheme from './src/hooks/useColorScheme';
+import {Amplify} from 'aws-amplify';
+import {withAuthenticator} from '@aws-amplify/ui-react-native';
+
+import config from './src/aws-exports';
+Amplify.configure(config);
 import {
   NavigationContainer,
   DarkTheme,
@@ -46,6 +51,4 @@ const App = () => {
   );
 };
 
-export default App;
-
-const styles = StyleSheet.create({});
+export default withAuthenticator(App);
