@@ -1,0 +1,12 @@
+{
+  "resourceName": "netflixmedia",
+  "policyUUID": "cc18cd5e",
+  "bucketName": "netflixclone1940ed4e8c524df1a13c26ac836998b2",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

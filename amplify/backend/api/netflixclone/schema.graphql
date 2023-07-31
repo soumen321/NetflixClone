@@ -1,0 +1,36 @@
+type Category @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  movies: [Movie] @hasMany
+}
+
+type Movie @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  poster: String!
+  year: Int
+  numberOfSeasons: Int
+  plot: String
+  cast: String
+  creator: String
+  category: Category @belongsTo
+  seasons: [Season] @hasMany
+}
+
+type Season @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  movie: Movie @belongsTo
+  episodes: [Episode] @hasMany
+}
+
+type Episode @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  poster: String!
+  duration: String!
+  plot: String
+  video: String!
+  season: Season @belongsTo
+}
+ 

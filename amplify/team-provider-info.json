@@ -15,6 +15,12 @@
       "auth": {
         "netflixclone84a7d0bb": {},
         "NetflixClone": {}
+      },
+      "api": {
+        "netflixclone": {}
+      },
+      "storage": {
+        "netflixmedia": {}
       }
     }
   }

@@ -1,4 +1,11 @@
 export type AmplifyDependentResourcesAttributes = {
+  "api": {
+    "netflixclone": {
+      "GraphQLAPIEndpointOutput": "string",
+      "GraphQLAPIIdOutput": "string",
+      "GraphQLAPIKeyOutput": "string"
+    }
+  },
   "auth": {
     "NetflixClone": {
       "AppClientID": "string",
@@ -9,6 +16,12 @@ export type AmplifyDependentResourcesAttributes = {
       "UserPoolArn": "string",
       "UserPoolId": "string",
       "UserPoolName": "string"
+    }
+  },
+  "storage": {
+    "netflixmedia": {
+      "BucketName": "string",
+      "Region": "string"
     }
   }
 }

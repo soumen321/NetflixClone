@@ -30,18 +30,7 @@ const VideoPlayerAV = (props: VideoPlayerProps) => {
     if (!videoPlayerRef) {
       return;
     }
-    (async () => {
-      if (videoPlayerRef.current) {
-        if (isPlaying) {
-          videoPlayerRef.current.pause();
-        } else {
-          videoPlayerRef.current.play();
-        }
-        setIsPlaying(!isPlaying);
-      }
-      //await videoPlayerRef?.current?.unloadAsync();
-      //  await videoPlayerRef?.current?.loadAsync({uri: videoURL}, {}, false);
-    })();
+    (async () => {})();
   }, [videoURL]);
 
   console.log('videoURL => ', videoURL);
@@ -70,7 +59,6 @@ const VideoPlayerAV = (props: VideoPlayerProps) => {
       autoplay={false}
       controlsTimeout={2000}
       disableControlsAutoHide={false}
-      // muted={true}
       defaultMuted={true}
       disableSeek={true}
       pauseOnPress={true}
