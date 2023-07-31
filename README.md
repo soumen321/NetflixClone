@@ -2,4 +2,4 @@
 
 React Native and AWS Amplify, GraphQL, AWS DynamoDB
 
-![image](https://github.com/soumen321/NetflixClone/assets/2536037/4ace54fb-e193-4a62-bc5b-946c19829c59)
+![Screenshot 2023-07-31 144924](https://github.com/soumen321/NetflixClone/assets/2536037/dfbb3a2f-f646-4c50-a783-4344727a1883)
